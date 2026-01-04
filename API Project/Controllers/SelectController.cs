@@ -11,13 +11,13 @@ namespace API_Project.Controllers
     {
         [HttpGet]
         [ActionName("ActionSelector")]
-
         public ActionTBList SelectAllActions()
         {
             ActionDB db = new ActionDB();
             ActionTBList actions = db.SelectAll();
             return actions;
         }
+
         [HttpGet]
         [ActionName("ApprenticeSelector")]
 

@@ -11,7 +11,6 @@ namespace API_Project.Controllers
     {
         [HttpPut]
         [ActionName("CityTBLUpdater")]
-
         public int UpdateACityTBL(CityTBL cityTBL)
         {
             CityDB db = new CityDB();
