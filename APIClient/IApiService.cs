@@ -13,6 +13,7 @@ namespace APIClient
         
         public Task<int> UpdateAnAction(ActionTBL action);
 
+        public Task<int> DeleteAnAction(ActionTBL action);
 
     }
 }

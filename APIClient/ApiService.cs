@@ -42,7 +42,13 @@ namespace APIClient
 
         public async Task<int> Delete<T>(int id, string url) where T : BaseEntity
         {
-            return (await Client.DeleteFromJsonAsync<T>(url + id)).IsSuccessStatusCode ? 1 : 0;
+            var c = (await Client.DeleteFromJsonAsync<T>((url + id).ToString())) as HttpResponseMessage;
+            return c.IsSuccessStatusCode ? 1 : 0;
+        }
+
+        public async Task<int> DeleteAnAction(ActionTBL action)
+        {
+            return await Delete<ActionTBL>(action.Id, "api/Delete/DeleteAActionTBL");
         }
     }
 }
