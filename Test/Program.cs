@@ -4,8 +4,8 @@ using WingsOfKaramboProject;
 
 CityDB cdb = new();
 CityTBList cList = cdb.SelectAll();
-foreach (CityTBL c in cList)
-    Console.WriteLine(c.WhatCity);
+//foreach (CityTBL c in cList)
+  //  Console.WriteLine(c.WhatCity);
 CityTBL CityTBLToUpdate = cList[2];
 CityTBLToUpdate.WhatCity += "אאא";
 cdb.Update(CityTBLToUpdate);
@@ -16,7 +16,7 @@ CityTBL newCityTBL = new CityTBL
     WhatCity = "מטולה"
 };
 cdb.Insert(newCityTBL);
-int x = cdb.SaveChanges();
+ x = cdb.SaveChanges();
 Console.WriteLine($"{x} rows were insert");
 CityTBL c = cList.Last();
 cdb.Delete(c);
